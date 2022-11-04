@@ -1,14 +1,10 @@
 # nft_task
 
-# Insall nodejs (https://nodejs.org/en/download/)
+# Clone this repository using git clone https://github.com/Achufam24/nft_task.git
 
-# Clone this repository using git clone https://github.com/Akanowo/hng_stage2_nft_task.git
-
-# Open your terminal and cd into the cloned directory
+# Open your terminal and cd into the cloned project directory
 
 # run npm install
-
-# use sample csv file in the root directory or copy and paste your csv file to the root directory
 
 # run node app.js
 
