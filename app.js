@@ -16,7 +16,7 @@ const filePath = 'file/HNG .csv';
 // })
 
 if (!filePath) {
-	console.error('Please specify file path');
+	console.error('input correct file path');
 	return;
 }
 
@@ -43,7 +43,6 @@ const CSV_OUTPUT = `${filePath.split('.')[0]}.output.csv`;
 			format: 'CHIP-0007',
 			...obj,
 		};
-		// convert all uppercase and spaced keys to lowercase snake-case
 		const formattedObj = formatChip007Keys(obj);
 
 		// convert attributes to array
@@ -67,14 +66,6 @@ const CSV_OUTPUT = `${filePath.split('.')[0]}.output.csv`;
 		} else {
 			formattedObj.attributes = [];
 		}
-
-		// check required chip-0007 properties according to chia docs, see https://github.com/Chia-Network/chips/blob/metadata-schema/assets/chip-0007/schema.json
-		// if (!formattedObj.name || !formattedObj.description) {
-		// 	console.error(
-		// 		'Please ensure your csv file has a "Name" and "Description" field'
-		// 	);
-		// 	return;
-		// }
 		newArr.push(formattedObj);
 	}
 
@@ -85,7 +76,7 @@ const CSV_OUTPUT = `${filePath.split('.')[0]}.output.csv`;
 		{ encoding: 'utf8' },
 		async (err) => {
 			if (err) {
-				console.error('Error occured: ', err);
+				console.error('Error has occured: ', err);
 				return;
 			}
 			console.log('file written successfully');
@@ -111,7 +102,7 @@ const CSV_OUTPUT = `${filePath.split('.')[0]}.output.csv`;
 				}
 
 				console.log(
-					`Output CSV generated successfully at ${__dirname}\\${CSV_OUTPUT}`
+					`Output CSV generated at ${__dirname}\\${CSV_OUTPUT}`
 				);
 			});
 		}
